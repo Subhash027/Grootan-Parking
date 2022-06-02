@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+            background: #f2f4f7;
+}
+
+body:after{
+content: "beta";
+position: fixed;
+width: 80px;
+height: 25px;
+background: #EE8E4A;
+top: 7px;
+left: -20px;
+text-align: center;
+font-size: 13px;
+font-family: sans-serif;
+text-transform: uppercase;
+font-weight: bold;
+color: #fff;
+line-height: 27px;
+transform:rotate(-45deg);
+}
+
+
+.header {
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+  padding: 20px 10px;
+  background: #fff;
+}
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+.header a.logo {
+  font-size: 35px;
+  font-weight: bold;
+  color:#416ea3;
+
+}
+.header .header-right a:hover {
+  background-color: #a9d6f5;
+  color: black;
+  border-radius:24px;
+}
+
+
+.header .header-right a {
+
+  color:#416ea3;
+
+}
+.header-right {
+  float: right;
+}
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .header-right {
+    float: none;
+  }
+}
+   label {
+    display: inline-block;
+    width: 70px;
+    margin: 5px;
+    text-align: left;
+    }
+     input[type=text], select {
+    display: inline-block;
+    width: 100px;
+    }
+     body div form button .park{
+    width:80px;
+    }
+     .content{
+            flex-direction: column;
+            padding: 2rem;
+            background: #fff;
+            width: 530px;
+            height: 480px;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+            margin-top:80px;
+            margin-left:425px;
+            font-size:25px;
+    }
+     button{
+        border:0;
+        background:#9ACD32;
+        width:100px;
+        text-align:center;
+        border-radius:24px;
+        padding: 14px 20px;
+        cursor:pointer;
+        align:center;
+        margin-left:150px;
+        margin-top:10px;
+    }
+    button[class=park]{
+    margin-top:40px;
+    margin-left:10px;
+    }
+     form h1{
+        margin-top:10px;
+        margin-bottom:40px;
+
+        color: #416ea3;
+        }
+    button[type=submit]
+    {
+            outline: none;
+            border: none;
+            color: #fff;
+            font-size: 0.8rem;
+
+    }
+     button[type=submit]:hover {
+            background: #dc931f;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+<div class="header">
+    <a href="#default" class="logo">GROOTAN PARKING SYSTEM</a>
+    <div class="header-right">
+        <a class="active" href="#home">Home</a>
+        <a sec:authorize="isAuthenticated()" th:href="@{/logout}">logout</a>
+    </div>
+</div>
+
+<div align="center" class="content">
+
+    <form action="#" th:action="@{/getParkingAvailable}" method="get" th:object="${result}" >
+        <h1 align="center">PARKING LOT</h1>
+        <label>AVAILABLE:</label>
+        <button type="submit">IsAvailable</button>
+    </form><br/><br/><br/>
+    <form action="#" th:action="@{/customer/details}" method="get" th:object="${customerDetails}">
+        <button type="submit" class="park">Park</button>
+    </form>
+
+</div>
+
+</body>
+
+</html>
