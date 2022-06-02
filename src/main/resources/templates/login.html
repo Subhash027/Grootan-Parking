@@ -80,7 +80,7 @@
 
             margin-bottom: 0.8rem;
             font-size: 1.1rem;
-            padding: 0.8rem 3rem;
+            padding: 0.8rem 2.6rem;
 
         }
 
@@ -209,6 +209,7 @@
                 display: flex;
                 flex-direction: column;
             }
+
         }
 
         @media (min-width: 769px) and (max-width: 1200px) {
@@ -785,6 +786,22 @@
             left:0;
             right:0;
             }
+            .user_icon{
+            position:absolute;
+            top:50px;
+            margin-left:10px;
+            }
+            .pass_icon{
+            position:absolute;
+            top:133px;
+            margin-left:10px;
+
+            }
+            .pass_eye{
+            position:absolute;
+            right:65px;
+            top:135px;
+            }
     /* Styles for car ends */
     </style>
 </head>
@@ -808,15 +825,16 @@
 
             <div class = "form-group">
                 <label for ="username"></label>
+                <span class="user_icon"><img src="https://img.icons8.com/external-those-icons-lineal-those-icons/24/undefined/external-user-maps-locations-those-icons-lineal-those-icons.png"/></span>
                 <input type="text" class = "form-control" id ="username" name = "username"
                        placeholder="Enter Email ID" autofocus="autofocus">
             </div>
             </br>
 
             <div class="form-group">
-                <label for="password"></label> <input type="password"
-                                                               id="password" name="password" class="form-control"
-                                                               placeholder="Enter Password" />
+                <label for="password"></label><span class="pass_icon"><img src="https://img.icons8.com/ios/24/undefined/password--v1.png"/> </span>
+                <input type="password" id="password" name="password" class="form-control"
+                                                               placeholder="Enter Password" /><span class="pass_eye"><img src="https://img.icons8.com/fluency-systems-regular/24/undefined/visible.png" id="togglePassword" onclick="toggle()"/></span>
             </div>
             </br>
 
@@ -872,5 +890,38 @@
     </div>
 </div>
 <!--For CAr-->
+<script>
+    var state =false;
+
+function toggle()
+
+{
+
+if(state)
+
+{
+
+document.getElementById("password").setAttribute("type","password");
+
+document.getElementById("togglePassword").style.color="black";
+
+state= false;
+
+}
+
+else
+
+{
+
+document.getElementById("password").setAttribute("type","text");
+
+document.getElementById("togglePassword").style.color="white";
+
+state= true;
+
+}
+
+}
+</script>
 </body>
 </html>
