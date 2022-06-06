@@ -1,0 +1,280 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f2f4f7;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.flex-div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.name-content {
+    margin-right: 7rem;
+}
+
+.name-content .logo {
+    font-size: 5rem;
+    color: #416ea3;
+}
+
+.name-content p {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+form {
+    position: relative;
+    left:80px;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 2rem;
+    width: 600px;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+}
+
+form input {
+    outline: none;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+    padding: 0.8rem 2.6rem;
+    width: 400px;
+}
+
+form input:focus {
+    border: 2px solid #1877f2;
+}
+
+form .login {
+    outline: none;
+    border: none;
+    background: #416ea3;
+    padding: 0.7rem 1rem;
+    border-radius: 0.4rem;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+form .login:hover {
+    background: rgba(31, 107, 220, 0.83);
+    cursor: pointer;
+}
+
+form a {
+    text-decoration: none;
+    text-align: left;
+    font-size: 1rem;
+    padding-top: 0.8rem;
+    color: rgba(24, 119, 242, 0.98);
+}
+
+form hr {
+    background: #a9a6a6;
+    margin: 1rem;
+}
+
+form .create-account
+{
+    outline: none;
+    border: none;
+    background: #416ea3;
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    font-size: 1.1rem;
+    color: #fff;
+    text-align: center;
+}
+
+form .create-account:hover {
+    background: rgba(31, 107, 220, 0.83);
+    cursor: pointer;
+}
+
+/* //.........Media Query.........// */
+
+@media (max-width: 500px) {
+    html {
+        font-size: 60%;
+    }
+
+    .name-content {
+        margin: 0;
+        text-align: center;
+    }
+
+    form {
+        width: 300px;
+        height: fit-content;
+    }
+
+    form input {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+
+    form .login {
+        font-size: 1.5rem;
+    }
+
+    form a {
+        font-size: 1.5rem;
+    }
+
+    form .create-account {
+        font-size: 1.5rem;
+    }
+
+    .flex-div {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 501px) and (max-width: 768px)
+{
+    html {
+        font-size: 60%;
+    }
+
+    .name-content {
+        margin: 0;
+        text-align: center;
+    }
+
+    form {
+        width: 300px;
+        height: fit-content;
+    }
+
+    form input {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+    form .login {
+        font-size: 1.5rem;
+    }
+
+    form a {
+        font-size: 1.5rem;
+    }
+
+    form .create-account {
+        font-size: 1.5rem;
+    }
+
+    .flex-div {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+    html {
+        font-size: 60%;
+    }
+
+    .name-content {
+        margin: 0;
+        text-align: center;
+    }
+
+    form {
+        width: 300px;
+        height: fit-content;
+    }
+
+    form input {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+    form .login {
+        font-size: 1.5rem;
+    }
+
+    form a {
+        font-size: 1.5rem;
+    }
+
+    form .create-account {
+        font-size: 1.5rem;
+    }
+
+    .flex-div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @media (orientation: landscape) and (max-height: 500px) {
+        .header {
+            height: 90vmax;
+        }
+    }
+}
+
+/* User input Icons */
+.user_icon
+{
+    width: 1.5rem;
+    top:12px;
+    position:absolute;
+    margin-left:10px;
+}
+.pass_icon
+{
+    width: 1.2rem;
+    top:12px;
+    position:absolute;
+    margin-left:10px;
+}
+.pass_eye
+{
+    width: 1.2rem;
+    top:13px;
+    position:absolute;
+    margin-left:-35px;
+}
+
+/* The alert message box */
+.incorrect-alert
+{
+    padding: 10px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.close-button
+{
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.close-button:hover
+{
+    color: rgba(53, 71, 110, 0.82);
+}
