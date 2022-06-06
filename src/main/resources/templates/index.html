@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Grootan Parking Lot</title>
     <style type="text/css">
-body 
+body
 {
   margin: 0;
   font-family: "Poppins", sans-serif;
@@ -142,7 +142,6 @@ transform:rotate(-45deg);
         <a sec:authorize="isAuthenticated()" th:href="@{/login}">logout</a>
     </div>
 </div>
-
 <div align="center" class="content">
     <form action="#" th:action="@{/getParkingAvailable}" method="get" th:object="${result}" >
         <h1 align="center">PARKING LOT</h1>

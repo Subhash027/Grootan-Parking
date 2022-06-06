@@ -14,12 +14,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
-public class KeyCloakSecurityConfig extends WebSecurityConfigurerAdapter {
-
+public class KeyCloakSecurityConfig extends WebSecurityConfigurerAdapter
+{
 	@Autowired
 	UserServiceImpl userService;
-
-
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -29,10 +27,13 @@ public class KeyCloakSecurityConfig extends WebSecurityConfigurerAdapter {
 						"/img/**").permitAll()
 				.anyRequest().fullyAuthenticated().and().formLogin()
 				.loginPage("/login").failureUrl("/login?error").permitAll()
-				.and().logout().invalidateHttpSession(true)
+				.and().logout()
+				.logoutUrl("/logout")
+				.logoutSuccessUrl("/login")
+
+				.invalidateHttpSession(true)
 				.clearAuthentication(true)
 				.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-				.logoutSuccessUrl("/login?logout")
 				.permitAll();
 	}
 
