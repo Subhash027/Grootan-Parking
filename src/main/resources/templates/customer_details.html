@@ -22,6 +22,7 @@
        margin: 15px;
        text-align: left;
        color: #416ea3;
+       font-weight: bolder;
     }
     input[type=text], select {
        display: inline-block;
@@ -29,34 +30,35 @@
     }
     button {
        padding: 5px;
-        margin-top: 30px;
+       margin-top: 30px;
     }
     button {
         border:0;
-        background:#9ACD32;
+        background:#416ea3;
         display:block;
-        width:100px;
+        width:300px;
         text-align:center;
         border-radius:24px;
-        padding 14px 30px;
+        padding:14px 30px;
         cursor:pointer;
-        align:center;
-        margin-left:180px;
-        margin-top:10px;
+        
+        
+    
     }
 
      form {
 
-            flex-direction: column;
-            background: #fff;
-            padding: 2rem;
-            width: 595px;
-            height: 540px;
-            border-radius: 0.5rem;
-            box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
-            margin-top:120px;
-            margin-left:468px;
-        }
+                flex-direction: column;
+                background: #fff;
+                padding: 2rem;
+                width: 595px;
+                height: 540px;
+                border-radius: 0.5rem;
+                box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+                margin-top:120px;
+                margin-left:468px;
+     }
+
         form h1{
         margin-bottom:20px;
         color: #416ea3;
@@ -84,7 +86,7 @@
             padding: 0.8rem 1rem;
             border-radius: 0.4rem;
             font-size: 0.9rem;
-            margin-left:210px;
+            margin-left:120px;
             color: #fff;
         }
      form .login:hover {
@@ -115,22 +117,22 @@
 <div  class="content">
 
         <form  th:action="@{/customer/details}" method="post" th:object="${customerDetails}" class="form" >
-        <h1 align="center" class="h1">REGISTER FOR PARKING</h1>
+        <h1 align="center" class="h1">REGISTER FOR PARKING</h1><br>
 
-        <label>vehicle :</label>
+        <label>Vehicle :</label>
         <input type="text" th:field="*{vehicleNumber}"/><br/>
 
-        <label>vehicleType :</label>
+        <label>VehicleType :</label>
         <input type="text" th:field="*{vehicleType}" /><br/>
 
-        <label>mail :</label>
+        <label>Mail :</label>
         <input type="text" th:field="*{mail}" /><br/>
 
-        <label>phonenumber :</label>
+        <label>Phonenumber :</label>
         <input type="text" th:field="*{phoneNumber}" /><br/>
 
-        <label>whatsappnumber :</label>
-        <input type="text" th:field="*{whatsappNumber}"/><br/>
+        <label>Whatsappnumber :</label>
+        <input type="text" th:field="*{whatsappNumber}"/><br/><br>
         
         <button type="submit" class="login">Submit</button>
 

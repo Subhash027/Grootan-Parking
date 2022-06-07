@@ -4,6 +4,7 @@ package com.parkingmanagementsystem.demo.controller;
 import com.parkingmanagementsystem.demo.model.Registration;
 import com.parkingmanagementsystem.demo.model.entity.User;
 import com.parkingmanagementsystem.demo.service.userservice.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/registration")
 public class RegistrationController {
 
+	@Autowired
 	private UserService userService;
 
 	public RegistrationController(UserService userService) {

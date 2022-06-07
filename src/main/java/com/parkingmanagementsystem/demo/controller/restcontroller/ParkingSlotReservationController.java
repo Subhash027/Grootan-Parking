@@ -36,7 +36,7 @@ public class ParkingSlotReservationController {
 	{
 		List<ParkingSlotReservation> result = new ArrayList<>();
 		parkingSlotReservationService.getParkingList().forEach(result::add);
-		result=result.stream().filter(booking -> booking.getOutTime()==null).collect(Collectors.toList());
+		result=result.stream().filter(booking -> booking.getOutTime()== null).collect(Collectors.toList());
 		return result;
 	}
 

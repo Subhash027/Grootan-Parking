@@ -58,6 +58,7 @@ public class UIController {
 		return "login";
 	}
 
+
 	@GetMapping("/parkingLot")
 	public String displayParkingLot(Model model) {
 		ParkingLot parkingLot = new ParkingLot();

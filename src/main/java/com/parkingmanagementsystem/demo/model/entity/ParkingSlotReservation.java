@@ -15,8 +15,7 @@ import java.time.LocalDateTime;
 
 
 
-@Getter
-@Setter
+
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
@@ -39,6 +38,62 @@ public class ParkingSlotReservation {
     private LocalDateTime outTime;
 
     private Double price;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getParkingLot() {
+        return parkingLot;
+    }
+
+    public void setParkingLot(String parkingLot) {
+        this.parkingLot = parkingLot;
+    }
+
+    public LocalDateTime getInTime() {
+        return inTime;
+    }
+
+    public void setInTime(LocalDateTime inTime) {
+        this.inTime = inTime;
+    }
+
+    public String getVehicleNumber() {
+        return vehicleNumber;
+    }
+
+    public void setVehicleNumber(String vehicleNumber) {
+        this.vehicleNumber = vehicleNumber;
+    }
+
+    public LocalDate getBookingDate() {
+        return bookingDate;
+    }
+
+    public void setBookingDate(LocalDate bookingDate) {
+        this.bookingDate = bookingDate;
+    }
+
+    public LocalDateTime getOutTime() {
+        return outTime;
+    }
+
+    public void setOutTime(LocalDateTime outTime) {
+        this.outTime = outTime;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
 
     public ParkingSlotReservation(String parkingLot, LocalDateTime inTime, String vehicleNumber, LocalDate bookingDate, LocalDateTime outTime, Double price) {
         this.parkingLot = parkingLot;
