@@ -5,8 +5,10 @@ import com.parkingmanagementsystem.demo.model.entity.Role;
 import com.parkingmanagementsystem.demo.model.entity.User;
 import com.parkingmanagementsystem.demo.repository.userrepository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -47,7 +49,7 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		User user = userRepository.findByUserName(username);
+		User user = userRepository.findByEmail(username);
 		if(user == null) {
 			throw new UsernameNotFoundException("Invalid username or password.");
 		}
@@ -57,4 +59,17 @@ public class UserServiceImpl implements UserService{
 	private Collection<? extends GrantedAuthority> mapRolesToAuthorities(Collection<Role> roles){
 		return roles.stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
 	}
+
+	public String currentUser()
+	{
+		Authentication authentication=getCurrentUser();
+		return  authentication.getName();
+	}
+
+	public Authentication getCurrentUser() {
+		Authentication authentication =
+				SecurityContextHolder.getContext().getAuthentication();
+		return authentication;
+	}
+
 }
