@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="/css/table.css">
     <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/_modals.css">
 </head>
 <body class="indexbody">
 <div class="headerindex">
@@ -38,7 +39,7 @@
             <td th:text="${result.address}" class="indexrow"></td>
             <td th:text="${result.city}" class="indexrow"></td>
             <td th:text="${result.isEmpty}" class="indexrow"></td>
-            <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Park</button>
+            <td><a type="button"  data-toggle="modal" data-target="#exampleModal">Park</a>
             </td>
         </tr>
         </tbody>
