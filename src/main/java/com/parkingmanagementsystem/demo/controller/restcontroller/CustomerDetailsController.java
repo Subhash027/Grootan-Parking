@@ -2,6 +2,7 @@ package com.parkingmanagementsystem.demo.controller.restcontroller;
 
 import com.parkingmanagementsystem.demo.model.entity.CustomerDetails;
 import com.parkingmanagementsystem.demo.service.CustomerDetailsService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirements;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+
 
 @RestController
 public class CustomerDetailsController {

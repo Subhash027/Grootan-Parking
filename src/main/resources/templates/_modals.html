@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+<!-- Modal -->
+<div th:fragment="modal(id)" class="modal fade" th:id="${id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form  th:action="@{/customer/details}" method="post" th:object="${customerDetails}" class="form" >
+                    <h1 align="center" class="h1">REGISTER FOR PARKING</h1><br>
+
+                    <label>Vehicle :</label>
+                    <input type="text" /><br/>
+
+                    <label>VehicleType :</label>
+                    <input type="text" /><br/>
+
+                    <label>Mail :</label>
+                    <input type="text"  /><br/>
+
+                    <label>Phonenumber :</label>
+                    <input type="text"  /><br/>
+
+                    <label>Whatsappnumber :</label>
+                    <input type="text" /><br/><br>
+
+                    <button type="submit" class="login">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

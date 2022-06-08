@@ -7,6 +7,7 @@ import com.parkingmanagementsystem.demo.exception.VehicleAlreadyCheckedOutExcept
 import com.parkingmanagementsystem.demo.model.entity.CustomerDetails;
 import com.parkingmanagementsystem.demo.model.entity.ParkingLot;
 import com.parkingmanagementsystem.demo.model.entity.ParkingSlotReservation;
+import com.parkingmanagementsystem.demo.repository.ParkingLotRepository;
 import com.parkingmanagementsystem.demo.repository.ParkingSlotReservationRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Optional;
@@ -30,6 +32,9 @@ public class ParkingSlotReservationService {
 
 	@Autowired
 	ParkingLotService parkingLotService;
+
+	@Autowired
+	private ParkingLotRepository parkingLotRepository;
 
 	Logger logger = LoggerFactory.getLogger(ParkingSlotReservationService.class);
 
@@ -48,7 +53,8 @@ public class ParkingSlotReservationService {
 		if (parkingLot != null) {
 			parkingLot.setEmpty(false);
 			parkingLot.getPrice();
-			return parkingSlotReservationRepository.save(new ParkingSlotReservation(parkingLot.getName(), LocalDateTime.now(),customerDetails.getVehicleNumber(),LocalDate.now(), (LocalDateTime) null,parkingLot.getPrice()));
+			parkingLotRepository.save(parkingLot);
+			return parkingSlotReservationRepository.save(new ParkingSlotReservation(parkingLot.getName(), LocalTime.now(),customerDetails.getVehicleNumber(),LocalDate.now(), (LocalDateTime) null,parkingLot.getPrice()));
 
 		} else {
 			throw new ParkingLotNotFoundException("Parking Lot not suitable for you");

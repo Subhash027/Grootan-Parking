@@ -9,11 +9,7 @@ import javax.persistence.Id;
 import javax.transaction.Transactional;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-
-
-
-
-
+import java.time.LocalTime;
 
 
 @NoArgsConstructor
@@ -39,7 +35,10 @@ public class ParkingSlotReservation {
 
     private Double price;
 
-    public Integer getId() {
+	public ParkingSlotReservation(String name, LocalTime now, String vehicleNumber, LocalDate now1, LocalDateTime outTime, Double price) {
+	}
+
+	public Integer getId() {
         return id;
     }
 

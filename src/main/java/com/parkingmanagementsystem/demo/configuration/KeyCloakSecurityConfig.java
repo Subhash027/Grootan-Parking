@@ -20,12 +20,16 @@ public class KeyCloakSecurityConfig extends WebSecurityConfigurerAdapter
 	UserServiceImpl userService;
 
 	@Override
-	protected void configure(HttpSecurity http) throws Exception {
+	protected void configure(HttpSecurity http) throws Exception
+	{
+		http.cors().and().csrf().disable();
 		http.authorizeRequests().antMatchers("/registration**",
 						"/js/**",
 						"/css/**",
-						"/img/**").permitAll()
-				.anyRequest().fullyAuthenticated().and().formLogin()
+						"/img/**",
+						"/swagger-ui/**",
+						"/parkingLot/**").permitAll()
+				.anyRequest().permitAll().and().formLogin()
 				.loginPage("/login").failureUrl("/login?error").permitAll()
 				.and().logout()
 				.logoutUrl("/logout")

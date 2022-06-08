@@ -21,6 +21,7 @@ public class CustomerDetailsService {
     Logger logger= LoggerFactory.getLogger(CustomerDetailsService.class);
 
 
+    @Autowired
     CustomerRepository customerRepository;
 
     /***

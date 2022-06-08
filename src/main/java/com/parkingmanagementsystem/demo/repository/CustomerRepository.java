@@ -21,6 +21,7 @@ public interface CustomerRepository extends JpaRepository<CustomerDetails,Intege
     @Query("select cd from CustomerDetails cd")
     List<CustomerDetails> findAllCustomer();
 
+    @Query("select customer from CustomerDetails customer where customer.vehicleNumber= ?1")
     Optional<CustomerDetails> getCustomerDetailsByVehicleNumber(String plate);
 
     @Query("select customer from CustomerDetails customer where customer.mail= ?1")

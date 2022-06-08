@@ -53,12 +53,12 @@
     }
     button {
         border:0;
-        background:#9ACD32;
+        background:#416ea3;
         display:block;
-        width:300px;
+        width:400px;
         text-align:center;
         border-radius:10px;
-        padding 14px 30px;
+        padding: 14px 30px;
         cursor:pointer;
         align:center;
         margin-left:180px;
@@ -110,7 +110,7 @@
             padding: 0.8rem 1rem;
             border-radius: 0.4rem;
             font-size: 1.1rem;
-            margin-left:120px;
+            margin-left: 60px;
             color: #fff;
         }
      form .login:hover {
@@ -135,6 +135,7 @@
 
             .login1{
             margin-left:150px;
+            display: inline;
             }
 
             .login :hover{
@@ -148,7 +149,6 @@
 
     <form th:action="@{/registration}" method="post" th:object="${user}">
         <h1>REGISTRATION</h1>
-        <br>
         <br>
         <div class="form-group">
             <label class="control-label" for="firstName"> User Name :</label>
@@ -171,7 +171,7 @@
 
         <div class="form-group">
             <button type="submit" class="btn btn-success">Register</button>
-            <br><br><br>
+            <br>
             <span class="login1">Already registered? <a href="/" th:href="@{/login}">Login here</a></span>
         </div>
     </form>

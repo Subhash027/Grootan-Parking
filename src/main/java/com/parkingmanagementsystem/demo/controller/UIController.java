@@ -4,7 +4,6 @@ import com.parkingmanagementsystem.demo.model.entity.CustomerDetails;
 import com.parkingmanagementsystem.demo.model.entity.ParkingLot;
 import com.parkingmanagementsystem.demo.model.entity.ParkingSlotReservation;
 import com.parkingmanagementsystem.demo.model.entity.User;
-import com.parkingmanagementsystem.demo.repository.CustomerRepository;
 import com.parkingmanagementsystem.demo.repository.userrepository.UserRepository;
 import com.parkingmanagementsystem.demo.service.CustomerDetailsService;
 import com.parkingmanagementsystem.demo.service.ParkingLotService;
@@ -49,7 +48,11 @@ public class UIController {
 		model.addAttribute("username",authentication.getName());
 		User user=userRepository.findByEmail(authentication.getName());
 		model.addAttribute("user",user);
+		CustomerDetails customerDetails = new CustomerDetails();
+		model.addAttribute("customerDetails", customerDetails);
+		getEmptyParkingLots(model);
 		return "index";
+
 	}
 	@GetMapping("/login")
 	public String LoginPage()
@@ -72,7 +75,7 @@ public class UIController {
 		return "Lot_created";
 	}
 
-	@GetMapping("/getParkingAvailable")
+
 	public String getEmptyParkingLots(Model model) {
 		List<ParkingLot> result = new ArrayList<>();
 		parkingLotService.getParkingLots().forEach(result::add);
@@ -105,6 +108,14 @@ public class UIController {
 		ParkingSlotReservation parkingSlotReservation = parkingSlotReservationService.createParking(customerDetails);
 		model.addAttribute("parkingSlotReservation", parkingSlotReservation);
 		return "getTicket";
+	}
+
+
+
+	@GetMapping("/Ticket")
+	public String ticket()
+	{
+		return "Ticket";
 	}
 
 }
