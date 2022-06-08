@@ -4,14 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-<!--    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+   <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
 
     <link rel="stylesheet" href="/css/table.css">
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/header.css">
 </head>
-<body>
-<div class="header">
+<body class="indexbody">
+<div class="headerindex">
     <a  class="logo"> <ul class="username"  th:each="user:${user}">
         <li class="welcome" >welcome,</li><li id="username" th:text="${user.userName}">user</li></ul></a>
     <div class="header-right">
@@ -20,25 +19,25 @@
         <a sec:authorize="isAuthenticated()" th:href="@{/login}">logout</a>
     </div>
 </div>
-<div class="container">
+<div class="indexcontainer">
 <div>
     <h1></h1>
-    <table class="styled-table" >
-        <thead>
-        <tr>
-            <th scope="col">NAME</th>
-            <th scope="col" class="change">Address</th>
-            <th scope="col" class="change">City</th>
-            <th scope="col" class="change">Available</th>
-            <th scope="col" class="change">Action</th>
+    <table class="styled-tablebox" >
+        <thead class="tableboxhead">
+        <tr >
+            <th scope="col" class="changebox">NAME</th>
+            <th scope="col" class="changebox">Address</th>
+            <th scope="col" class="changebox">City</th>
+            <th scope="col" class="changebox">Available</th>
+            <th scope="col" class="changebox">Action</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="result:${result}" class="pages">
-            <td th:text="${result.name}" class="row"></td>
-            <td th:text="${result.address}" class="row"></td>
-            <td th:text="${result.city}" class="row"></td>
-            <td th:text="${result.isEmpty}" class="row"></td>
+        <tr th:each="result:${result}" class="trpages">
+            <td th:text="${result.name}" class="indexrow"></td>
+            <td th:text="${result.address}" class="indexrow"></td>
+            <td th:text="${result.city}" class="indexrow"></td>
+            <td th:text="${result.isEmpty}" class="indexrow"></td>
             <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Park</button>
             </td>
         </tr>

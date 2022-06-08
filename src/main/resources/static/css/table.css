@@ -25,43 +25,42 @@
     z-index: 1;
 }
 
-.styled-table {
+
+.styled-tablebox {
     border-collapse: collapse;
-    margin: 25px 0;
+    border-style: groove;
+    margin: 100px 100px;
     font-size: 1.3em;
     font-family: sans-serif;
-    min-width: 900px;
+    min-width: 1200px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
-.styled-table thead tr {
-    background-color: #315481;
+.styled-tablebox .tableboxhead .changebox {
+    background-color: #0cb4f7;
     color: #ffffff;
     text-align: left;
 
 }
-.styled-table th,
-.styled-table td {
+.styled-tablebox th,
+.styled-tablebox td {
     padding: 12px 15px;
 }
-.styled-table tbody tr {
+.styled-tablebox tbody .trpages {
     border-bottom: 1px solid #dddddd;
 }
 
-.styled-table tbody tr:nth-of-type(even) {
+.styled-tablebox tbody .trpages:nth-of-type(even) {
     background-color: #f3f3f3;
 }
 
-.styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
+.styled-tablebox tbody .trpages:last-of-type {
+    border-bottom: 2px solid #1db6f3;
 }
-.styled-table tbody tr.active-row {
+.styled-tablebox tbody .trpages.active-row {
     font-weight: bold;
     color: #009879;
 }
-.styled-table tbody tr button:nth-child(odd){
-    text-align: center;
-    min-width: 100px;
-
-    
+.styled-tablebox tbody tr td form button.park:nth-of-type(odd){
+    min-width:140px;
 
 }

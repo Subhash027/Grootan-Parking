@@ -1,4 +1,29 @@
-.header {
+body
+{
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #f2f4f7;
+}
+
+body:after{
+content: "beta";
+position: fixed;
+width: 80px;
+height: 25px;
+background: #EE8E4A;
+top: 7px;
+left: -20px;
+text-align: center;
+font-size: 13px;
+font-family: sans-serif;
+text-transform: uppercase;
+font-weight: bold;
+color: #fff;
+line-height: 27px;
+transform:rotate(-45deg);
+}
+
+.headerindex {
   
     overflow: hidden;
     box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
@@ -6,12 +31,12 @@
     background: #fff;
     
   }
-  div.header a.logo .username li#username{
+  div.headerindex a.logo .username li#username{
             display: inline;
-            padding-left: 0px;
+            padding-left: 130px;
             font-size: xx-large;
           }
-  .header a {
+  .headerindex a {
     float: left;
     color: black;
     text-align: center;
@@ -21,7 +46,7 @@
     line-height: 20px;
     
   }
-  .header a.logo {
+  .headerindex a.logo {
    
     font-weight: bold;
     color:#416ea3;
@@ -29,13 +54,13 @@
     padding-top: 10px;
   
   }
-  .header .header-right a:hover {
+  .headerindex .header-right a:hover {
     background-color: #416ea3;
     color: rgb(255, 255, 255);
     border-radius:20px;
     border-style: hidden;
   }
-  .header .header-right a {
+  .headerindex .header-right a {
     color:#416ea3;
     padding: 13px;
     text-decoration: solid;
@@ -45,7 +70,7 @@
     float: right;
   }
   @media screen and (max-width: 500px) {
-    .header a {
+    .headerindex a {
       float: none;
       display: block;
       text-align: left;
@@ -54,4 +79,45 @@
     .header-right {
       float: none;
     }
+  }
+  .username{
+
+    list-style: none;
+    display: inline;
+    flex: content;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    text-decoration: solid;
+    text-transform: uppercase;
+    color:#416ea3;
+    line-height: 25px;
+    border-radius: 4px;
+    margin-top:10px;
+    
+
+
+}
+div.header a.logo .username li{
+display: inline;
+padding: 10px;
+font-size: xx-large;
+}
+label {
+  display: inline-block;
+  width: 70px;
+  margin: 5px;
+  text-align: left;
+  }
+   input[type=text], select {
+  display: inline-block;
+  width: 100px;
+  }
+   body div form button .park{
+  width:80px;
+  }
+  .welcome{
+    font-size: xx-large;
+    padding-left: 30px;
   }
