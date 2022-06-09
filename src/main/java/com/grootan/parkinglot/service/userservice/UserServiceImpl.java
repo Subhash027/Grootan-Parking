@@ -1,9 +1,9 @@
-package com.grootan.parkinglot.service.userservice;
+package com.parkingmanagementsystem.demo.service.userservice;
 
-import com.grootan.parkinglot.model.Registration;
-import com.grootan.parkinglot.model.entity.Role;
-import com.grootan.parkinglot.model.entity.User;
-import com.grootan.parkinglot.repository.userrepository.UserRepository;
+import com.parkingmanagementsystem.demo.model.Registration;
+import com.parkingmanagementsystem.demo.model.entity.Role;
+import com.parkingmanagementsystem.demo.model.entity.User;
+import com.parkingmanagementsystem.demo.repository.userrepository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -19,8 +19,10 @@ import java.util.Collection;
 import java.util.stream.Collectors;
 
 @Service
-public class UserServiceImpl implements UserService
-{
+public class UserServiceImpl implements UserService{
+
+
+
 	private UserRepository userRepository;
 
 	@Autowired
@@ -32,9 +34,10 @@ public class UserServiceImpl implements UserService
 		this.userRepository=userRepository;
 	}
 
+
+
 	@Override
-	public User save(Registration user)
-	{
+	public User save(Registration user) {
 		User user1=new User(user.getUserName(),user.getEmail(),bCryptPasswordEncoder.encode(user.getPassword()), Arrays.asList(new Role("ROLE_USER")));
 		return userRepository.save(user1);
 	}
@@ -64,7 +67,8 @@ public class UserServiceImpl implements UserService
 	}
 
 	public Authentication getCurrentUser() {
-		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		Authentication authentication =
+				SecurityContextHolder.getContext().getAuthentication();
 		return authentication;
 	}
 

@@ -1,13 +1,14 @@
-package com.grootan.parkinglot.service;
+package com.parkingmanagementsystem.demo.service;
 
-import com.grootan.parkinglot.exception.ParkingLotNotFoundException;
-import com.grootan.parkinglot.exception.VehicleAlreadyCheckedInException;
-import com.grootan.parkinglot.exception.VehicleAlreadyCheckedOutException;
-import com.grootan.parkinglot.model.entity.CustomerDetails;
-import com.grootan.parkinglot.model.entity.ParkingLot;
-import com.grootan.parkinglot.model.entity.ParkingSlotReservation;
-import com.grootan.parkinglot.repository.ParkingLotRepository;
-import com.grootan.parkinglot.repository.ParkingSlotReservationRepository;
+
+import com.parkingmanagementsystem.demo.exception.ParkingLotNotFoundException;
+import com.parkingmanagementsystem.demo.exception.VehicleAlreadyCheckedInException;
+import com.parkingmanagementsystem.demo.exception.VehicleAlreadyCheckedOutException;
+import com.parkingmanagementsystem.demo.model.entity.CustomerDetails;
+import com.parkingmanagementsystem.demo.model.entity.ParkingLot;
+import com.parkingmanagementsystem.demo.model.entity.ParkingSlotReservation;
+import com.parkingmanagementsystem.demo.repository.ParkingLotRepository;
+import com.parkingmanagementsystem.demo.repository.ParkingSlotReservationRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -76,10 +77,10 @@ public class ParkingSlotReservationService {
 	}
 	public void checkIfAlreadyParked(CustomerDetails customerDetails)
 	{
-		List<ParkingSlotReservation> parkedPerson = parkingSlotReservationRepository.findByVehicleNumber(customerDetails.getVehicleNumber());
-		if(parkedPerson.size()>=1)
+		List<ParkingSlotReservation> ParkedPerson=parkingSlotReservationRepository.findByVehicleNumber(customerDetails.getVehicleNumber());
+		if(ParkedPerson.size()>=1)
 		{
-			for(ParkingSlotReservation parkingSlotReservation:parkedPerson)
+			for(ParkingSlotReservation parkingSlotReservation:ParkedPerson)
 			{
 				LocalDateTime checkIn = parkingSlotReservation.getInTime();
 				LocalDateTime checkOut = parkingSlotReservation.getOutTime();

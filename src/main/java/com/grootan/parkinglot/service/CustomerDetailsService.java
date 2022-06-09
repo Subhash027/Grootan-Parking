@@ -1,10 +1,9 @@
-package com.grootan.parkinglot.service;
+package com.parkingmanagementsystem.demo.service;
 
 
-import com.grootan.parkinglot.constants.StringConstants;
-import com.grootan.parkinglot.exception.ResourceNotFoundException;
-import com.grootan.parkinglot.model.entity.CustomerDetails;
-import com.grootan.parkinglot.repository.CustomerRepository;
+import com.parkingmanagementsystem.demo.exception.ResourceNotFoundException;
+import com.parkingmanagementsystem.demo.model.entity.CustomerDetails;
+import com.parkingmanagementsystem.demo.repository.CustomerRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,11 +12,15 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+import static com.parkingmanagementsystem.demo.constants.StringConstants.DELETE_SUCCESSFULL;
+
 
 @Service
-public class CustomerDetailsService
-{
+public class CustomerDetailsService {
+
     Logger logger= LoggerFactory.getLogger(CustomerDetailsService.class);
+
+
     @Autowired
     CustomerRepository customerRepository;
 
@@ -35,8 +38,9 @@ public class CustomerDetailsService
             throw new ResourceNotFoundException("vehicle number is not found");
         }
         customerRepository.delete(customerDetails);
-        logger.info(StringConstants.DELETE_SUCCESSFULL);
+        logger.info(DELETE_SUCCESSFULL);
         return customerDetails ;
+
     }
 
 
@@ -47,6 +51,7 @@ public class CustomerDetailsService
     public CustomerDetails saveUserDetails(CustomerDetails customerDetails)
     {
          return customerRepository.save(customerDetails);
+
     }
 
     /***
@@ -64,6 +69,7 @@ public class CustomerDetailsService
      * @param vehicleNumber
      * @return
      */
+
     public Optional<CustomerDetails> findByVehicleNumber(String vehicleNumber)
     {
 

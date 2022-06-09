@@ -1,4 +1,4 @@
-package com.grootan.parkinglot.model.entity;
+package com.parkingmanagementsystem.demo.model.entity;
 
 
 
@@ -6,8 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "role")
-public class Role
-{
+public class Role {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

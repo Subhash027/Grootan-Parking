@@ -1,7 +1,8 @@
-package com.grootan.parkinglot.controller.restcontroller;
+package com.parkingmanagementsystem.demo.controller.restcontroller;
 
-import com.grootan.parkinglot.model.entity.CustomerDetails;
-import com.grootan.parkinglot.service.CustomerDetailsService;
+import com.parkingmanagementsystem.demo.model.entity.CustomerDetails;
+import com.parkingmanagementsystem.demo.service.CustomerDetailsService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirements;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +15,11 @@ import java.util.Optional;
 
 
 @RestController
-public class CustomerDetailsController
-{
+public class CustomerDetailsController {
+
     Logger logger= LoggerFactory.getLogger(CustomerDetailsController.class);
+
+
     @Autowired
     CustomerDetailsService customerDetailsService;
 

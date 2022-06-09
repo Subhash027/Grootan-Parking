@@ -1,42 +1,157 @@
 <!DOCTYPE HTML>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-<link rel="stylesheet" href="/assets/css/_modals.css">
+<style>
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    body{
+            font-family: "Poppins", sans-serif;
+            background: #f2f4f7;
+        }
+
+    label {
+       display: inline-block;
+       width: 180px;
+       margin: 15px;
+       text-align: left;
+       color: #416ea3;
+       font-weight: bolder;
+    }
+    input[type=text], select {
+       display: inline-block;
+       width: 200px;
+    }
+    button {
+       padding: 5px;
+       margin-top: 0px;
+       display: inline-block;
+       position:absolute;
+       
+    }
+    button {
+        
+        border:0;
+        background:#416ea3;
+        display:inline;
+        width: 180px;
+        text-align:center;
+        border-radius:24px;
+        padding:14px 30px;
+        cursor:pointer;
+    }
+
+     form {
+
+                flex-direction: column;
+                background: #fff;
+                padding: 2rem;
+                width: 595px;
+                height: 540px;
+                border-radius: 0.5rem;
+                box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+                margin-top:120px;
+                margin-left:468px;
+     }
+
+        form h1{
+            margin-left:70px ;
+            margin-bottom:20px;
+            color: #416ea3;
+        }
+
+     form input {
+            outline: none;
+            font-size: 0.9rem;
+            padding: 0.8rem 1rem;
+            margin-bottom:15px;
+            border: 2px solid #2a2a2b31;
+            border-radius:10px ;
+
+        }
+        label{
+        margin-left:70px;
+        }
+
+     form input:focus {
+            border: 2px solid #1877f2;
+        }
+
+     form .login {
+            outline: none;
+            border: none;
+            padding: 0.8rem 1rem;
+            border-radius: 0.4rem;
+            font-size: 0.9rem;
+            margin-left:70px;
+            color: #fff;
+        }
+     form .login:hover {
+            background: #dc931f;
+            cursor: pointer;
+        }
+
+     @media (max-width: 500px) {
+            form {
+                width: 300px;
+                height: fit-content;
+            }
+
+            form input {
+                margin-bottom: 1rem;
+                font-size: 1.5rem;
+            }
+            form .login {
+                font-size: 1.5rem;
+                
+            }
+
+        }
+        .close{
+            border:0;
+            background:#416ea3;
+            display:block;
+            width: 180px;
+            text-align:center;
+            border-radius: 0.4rem;
+            padding:14px 30px;
+            cursor:pointer;
+            outline: none;
+            border: none;
+            padding: 0.8rem 1rem;
+            border-radius: 0.4rem;
+            font-size: 0.9rem;
+            margin-left:280px;
+            color: #fff;
+        }
+
+
+</style>
 </head>
 <body>
 <!-- Modal -->
 <div th:fragment="modal(id)" class="modal fade" th:id="${id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
+    <div class="modal-dialog">    
                 <form  th:action="@{/customer/details}" method="post" th:object="${customerDetails}" class="form" >
-                    <h1 align="center" class="h1">REGISTER FOR PARKING</h1><br>
+                    <h1  class="h1">REGISTER FOR PARKING</h1>
+                    </a><br>
 
-                    <label>Vehicle :</label>
-                    <input type="text" /><br/>
+                    <label>Vehicle :</label><input type="text" /><br/>
 
-                    <label>VehicleType :</label>
-                    <input type="text" /><br/>
+                    <label>VehicleType :</label><input type="text" /><br/>
 
-                    <label>Mail :</label>
-                    <input type="text"  /><br/>
+                    <label>Mail :</label><input type="text"  /><br/>
 
-                    <label>Phonenumber :</label>
-                    <input type="text"  /><br/>
+                    <label>Phonenumber :</label><input type="text"  /><br/>
 
-                    <label>Whatsappnumber :</label>
-                    <input type="text" /><br/><br>
+                    <label>Whatsappnumber :</label><input type="text" /><br/><br>
 
+                    <button  class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Cancel</span>
                     <button type="submit" class="login">Submit</button>
                 </form>
-            </div>
-        </div>
     </div>
 </div>
 </body>
