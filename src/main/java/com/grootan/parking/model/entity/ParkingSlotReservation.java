@@ -10,9 +10,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.transaction.Transactional;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.Date;
 
 
 @NoArgsConstructor
@@ -28,7 +30,7 @@ public class ParkingSlotReservation
 
     private String parkingLot;
 
-    private LocalDateTime inTime;
+    private Date inTime;
 
     private String vehicleNumber;
 
@@ -39,6 +41,12 @@ public class ParkingSlotReservation
     private Double price;
 
 	public ParkingSlotReservation(String name, LocalTime now, String vehicleNumber, LocalDate now1, LocalDateTime outTime, Double price) {
+        this.parkingLot = parkingLot;
+        this.inTime = inTime;
+        this.vehicleNumber = vehicleNumber;
+        this.bookingDate = bookingDate;
+        this.outTime = outTime;
+        this.price=price;
 	}
 
 	public Integer getId() {

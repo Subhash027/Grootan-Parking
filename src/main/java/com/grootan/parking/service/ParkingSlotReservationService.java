@@ -15,10 +15,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -54,7 +57,7 @@ public class ParkingSlotReservationService {
 			parkingLot.setEmpty(false);
 			parkingLot.getPrice();
 			parkingLotRepository.save(parkingLot);
-			return parkingSlotReservationRepository.save(new ParkingSlotReservation(parkingLot.getName(), LocalTime.now(),customerDetails.getVehicleNumber(),LocalDate.now(), (LocalDateTime) null,parkingLot.getPrice()));
+			return parkingSlotReservationRepository.save(new ParkingSlotReservation(parkingLot.getName(), LocalTime.now(),customerDetails.getVehicleNumber(),, (LocalDateTime) null,parkingLot.getPrice()));
 
 		} else {
 			throw new ParkingLotNotFoundException("Parking Lot not suitable for you");
@@ -152,6 +155,14 @@ public class ParkingSlotReservationService {
 			return price;
 		}
 		return priceCheck*price;
+	}
+
+
+	public String dateOnly()
+	{
+			DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy hh.mm aa");
+			return dateFormat.format(new Date()).toString();
+
 	}
 
 

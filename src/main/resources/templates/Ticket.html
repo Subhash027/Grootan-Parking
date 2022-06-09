@@ -8,13 +8,13 @@
     <script>
         var qrcode = new QRCode("qrcode");
     function makeCode () {		
-        var elText ="v";
+        var elText ="hello";
         qrcode.makeCode(elText);
     }
     makeCode();
     </script>  
     <style>
-        @import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
 .float-left {
 float:left;
 width:300px;  
@@ -116,50 +116,51 @@ a {
     </style>
 </head>
 <body>
-    <div class="contenido">
+    <div class="contenido" style="height: 460px;">
         <div class="ticket">
           <div class="hqr">
-            <div class="column left-one"></div>
-            <div class="column center">
-              <div id="qrcode"></div>
+            <div class="column left-one"style="height: 60px;"></div>
+            <div class="column center"style="height: 60px;">
+              <div id="qrcode" class="qrcode"></div>
             </div>
-            <div class="column right-one"></div>
+            <div class="column right-one"style="height: 60px;"></div>
           </div>
           </div>
-          <div class="details">
+          <div class="details" style="height: 460px;">
+            <form action="#" th:action="@{/getLotDetails}" method="post" th:object="${parkingSlotReservation}" >
+            <div class="tinfo" >
+              NAME:
+            </div>
+            <div class="tdata name"><span th:each="user:${user}" th:text="${user.userName}"></span>
+        
+            </div>
             <div class="tinfo">
-              attendee
+              PARKING-LOT:
             </div>
-            <div class="tdata name">
-              Johnny Harmon
-            </div>
-            <div class="tinfo">
-              ticket
-            </div>
-            <div class="tdata">
-              Monday General Admission
+            <div class="tdata"><span th:text="${parkingSlotReservation.parkingLot}"></span>
+              
             </div>      
             <div class="tinfo">
-              event
+              IN-TIME
             </div>
-            <div class="tdata">
-              Goal Summit NYC 2016 BetterWorks
+            <div class="tdata"><span th:text="${parkingSlotReservation.inTime}"></span>
+              
             </div>  
             <div class="masinfo">
               <div class="left">
                <div class="tinfo">
-              date
+              DATE:
             </div>
-            <div class="tdata nesp">
-              MON. APR 09, 7:00PM
+            <div class="tdata nesp"><span th:text="${parkingSlotReservation.bookingDate}"></span>
+              
             </div>  
               </div>
               <div class="right">
               <div class="tinfo">
-              location
+              VEHICLE-NUMBER:
             </div>
-            <div class="tdata nesp">
-              Octavia Street. San Francisco, CA
+            <div class="tdata nesp"><span th:text="${parkingSlotReservation.vehicleNumber}"></span>
+              
             </div> 
               </div>
             </div>
@@ -167,6 +168,7 @@ a {
             <div class="link">
               <a href="#">SEE MORE</a>
             </div>
+            </form>
           </div>
         </div>
       </div>  

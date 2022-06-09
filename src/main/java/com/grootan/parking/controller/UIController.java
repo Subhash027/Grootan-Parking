@@ -109,12 +109,14 @@ public class UIController
 	public String lotCreated(@ModelAttribute("customerDetails") CustomerDetails customerDetails, Model model) {
 		ParkingSlotReservation parkingSlotReservation = parkingSlotReservationService.createParking(customerDetails);
 		model.addAttribute("parkingSlotReservation", parkingSlotReservation);
-		return "getTicket";
+		return "Ticket";
 	}
 
 	@GetMapping("/Ticket")
-	public String ticket()
+	public String ticket(Model model)
 	{
+		ParkingLot parkingLot=new ParkingLot();
+		model.addAttribute("parkingLot", parkingLot);
 		return "Ticket";
 	}
 
