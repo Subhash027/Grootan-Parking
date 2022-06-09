@@ -24,7 +24,7 @@ public class KeyCloakSecurityConfig extends WebSecurityConfigurerAdapter
                     "/grootan-parking-system/api-docs/**",
 					"/parkingLot/**",
 					"/registration/**",
-					"/css/**"
+					"/assets/**"
 			};
 
     @Override

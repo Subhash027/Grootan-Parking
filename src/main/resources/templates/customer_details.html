@@ -6,115 +6,10 @@
     <title>Title</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/index.css">
-    <style type="text/css">
-     * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-    body{
-            font-family: "Poppins", sans-serif;
-            background: #f2f4f7;
-        }
 
-    label {
-       display: inline-block;
-       width: 180px;
-       margin: 15px;
-       text-align: left;
-       color: #416ea3;
-       font-weight: bolder;
-    }
-    input[type=text], select {
-       display: inline-block;
-       width: 200px;
-    }
-    button {
-       padding: 5px;
-       margin-top: 30px;
-    }
-    button {
-        border:0;
-        background:#416ea3;
-        display:block;
-        width:300px;
-        text-align:center;
-        border-radius:24px;
-        padding:14px 30px;
-        cursor:pointer;
-        
-        
-    
-    }
-
-     form {
-
-                flex-direction: column;
-                background: #fff;
-                padding: 2rem;
-                width: 595px;
-                height: 540px;
-                border-radius: 0.5rem;
-                box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
-                margin-top:120px;
-                margin-left:468px;
-     }
-
-        form h1{
-        margin-bottom:20px;
-        color: #416ea3;
-        }
-
-     form input {
-            outline: none;
-            font-size: 0.9rem;
-            padding: 0.8rem 1rem;
-            margin-bottom:15px;
-            border: 2px solid #2a2a2b31;
-            border-radius:10px ;
-
-        }
-        label{
-        margin-left:70px;
-        }
-
-     form input:focus {
-            border: 2px solid #1877f2;
-        }
-
-     form .login {
-            outline: none;
-            border: none;
-            padding: 0.8rem 1rem;
-            border-radius: 0.4rem;
-            font-size: 0.9rem;
-            margin-left:120px;
-            color: #fff;
-        }
-     form .login:hover {
-            background: #dc931f;
-            cursor: pointer;
-        }
-
-     @media (max-width: 500px) {
-            form {
-                width: 300px;
-                height: fit-content;
-            }
-
-            form input {
-                margin-bottom: 1rem;
-                font-size: 1.5rem;
-            }
-            form .login {
-                font-size: 1.5rem;
-            }
-
-        }
-
-
-    </style>
+    <link rel="stylesheet" href="/assets/css/index_popup.css">
+    <link rel="stylesheet" href="/assets/css/customer_details.css">
+    <link rel="shortcut icon" href="/assets/images/favicon.ico"/>
 </head>
 <body>
     <div class="header">
@@ -124,11 +19,9 @@
             <a class="active" th:href="@{/}">Home</a>
             <a class="active" th:href="@{/}">Ticket</a>
             <a sec:authorize="isAuthenticated()" th:href="@{/login}">logout</a>
-    
         </div>
     </div>
-<div  class="content">
-
+<div class="content">
         <form  th:action="@{/customer/details}" method="post" th:object="${customerDetails}" class="form" >
         <h1 align="center" class="h1">REGISTER FOR PARKING</h1><br>
 
@@ -148,8 +41,6 @@
         <input type="text" th:field="*{whatsappNumber}"/><br/><br>
         
         <button type="submit" class="login">Submit</button>
-
-
     </form>
 </div>
 
