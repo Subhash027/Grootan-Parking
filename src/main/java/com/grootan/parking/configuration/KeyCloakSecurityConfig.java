@@ -1,10 +1,5 @@
 package com.grootan.parking.configuration;
 
-<<<<<<< HEAD
-=======
-
-//import org.keycloak.adapters.springsecurity.config.KeycloakWebSecurityConfigurerAdapter;
->>>>>>> diva
 import com.grootan.parking.service.userservice.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

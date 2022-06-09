@@ -2,7 +2,7 @@ package com.grootan.parking.model.entity;
 
 
 
-import com.grootan.parking.enums.VehicleType;
+import com.grootan.parking.enums.VehicleT;
 import com.sun.istack.NotNull;
 import lombok.*;
 import org.springframework.lang.Nullable;
@@ -36,11 +36,11 @@ public class CustomerDetails {
         this.vehicleNumber = vehicleNumber;
     }
 
-    public VehicleType getVehicleType() {
+    public VehicleT getVehicleType() {
         return vehicleType;
     }
 
-    public void setVehicleType(VehicleType vehicleType) {
+    public void setVehicleType(VehicleT vehicleType) {
         this.vehicleType = vehicleType;
     }
 
@@ -76,7 +76,7 @@ public class CustomerDetails {
     @NotNull
     private String vehicleNumber;
     @NotNull
-    private VehicleType vehicleType;
+    private VehicleT vehicleType;
     @Nullable
     private String mail;
     @NotNull

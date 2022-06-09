@@ -1,7 +1,7 @@
 package com.grootan.parking.service;
 
 
-import com.grootan.parking.enums.VehicleType;
+import com.grootan.parking.enums.VehicleT;
 import com.grootan.parking.model.entity.ParkingLot;
 import com.grootan.parking.repository.ParkingLotRepository;
 import org.slf4j.Logger;
@@ -37,7 +37,7 @@ public class ParkingLotService {
 		return parkingLot.orElseThrow(Exception::new);
 	}
 
-	public List<ParkingLot> findByVehicleType(VehicleType vehicleType)
+	public List<ParkingLot> findByVehicleType(VehicleT vehicleType)
 	{
 		return parkingLotRepository.findParkingLotByVehicleType(vehicleType);
 	}

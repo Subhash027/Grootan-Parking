@@ -2,7 +2,7 @@ package com.grootan.parking.repository;
 
 
 
-import com.grootan.parking.enums.VehicleType;
+import com.grootan.parking.enums.VehicleT;
 import com.grootan.parking.model.entity.ParkingLot;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -14,7 +14,7 @@ import java.util.Optional;
 @Repository
 public interface ParkingLotRepository extends JpaRepository<ParkingLot,Integer> {
 
-	List<ParkingLot> findParkingLotByVehicleType(VehicleType vehicleType);
+	List<ParkingLot> findParkingLotByVehicleType(VehicleT vehicleType);
 
 	Optional<ParkingLot> findPriceByName(String name);
 
