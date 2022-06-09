@@ -1,12 +1,8 @@
 package com.grootan.parking.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.grootan.parking.enums.VehicleT;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
+import com.grootan.parking.enums.VehicleType;
+import lombok.*;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,8 +13,8 @@ import javax.persistence.Id;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ParkingLot
-{
+public class ParkingLot {
+
     @JsonIgnore
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,7 +28,10 @@ public class ParkingLot
 
     private boolean isEmpty;
 
-    private VehicleT vehicleType;
+    private VehicleType vehicleType;
 
     private Double price;
+
+
+
 }

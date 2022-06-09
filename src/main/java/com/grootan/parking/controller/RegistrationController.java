@@ -3,6 +3,7 @@ package com.grootan.parking.controller;
 
 import com.grootan.parking.model.Registration;
 import com.grootan.parking.service.userservice.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/registration")
 public class RegistrationController
 {
+	@Autowired
 	private UserService userService;
 
 	public RegistrationController(UserService userService)
@@ -29,6 +31,16 @@ public class RegistrationController
 	}
 
 	@GetMapping
+	public String showRegistrationForm() {
+		return "registration";
+	}
+
+	@PostMapping
+	public String registerUserAccount(@ModelAttribute("user") Registration registrationDto) {
+		userService.save(registrationDto);
+		return "redirect:/registration?success";
+	}
+
 	public String showRegistrationForm()
 	{
 		return "registration";

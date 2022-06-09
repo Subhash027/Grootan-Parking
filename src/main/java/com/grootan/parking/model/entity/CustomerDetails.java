@@ -1,27 +1,26 @@
 package com.grootan.parking.model.entity;
 
 
-import com.grootan.parking.enums.VehicleT;
-import com.sun.istack.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
-import org.springframework.lang.Nullable;
 
+import com.grootan.parking.enums.VehicleType;
+import com.sun.istack.NotNull;
+import lombok.*;
+import org.springframework.lang.Nullable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
+
+
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
 @Entity
-public class CustomerDetails
-{
+public class CustomerDetails {
 
-    public Integer getCustomerDetailsId()
-    {
+    public Integer getCustomerDetailsId() {
         return customerDetailsId;
     }
 
@@ -37,11 +36,11 @@ public class CustomerDetails
         this.vehicleNumber = vehicleNumber;
     }
 
-    public VehicleT getVehicleType() {
+    public VehicleType getVehicleType() {
         return vehicleType;
     }
 
-    public void setVehicleType(VehicleT vehicleType) {
+    public void setVehicleType(VehicleType vehicleType) {
         this.vehicleType = vehicleType;
     }
 
@@ -77,11 +76,17 @@ public class CustomerDetails
     @NotNull
     private String vehicleNumber;
     @NotNull
-    private VehicleT vehicleType;
+    private VehicleType vehicleType;
     @Nullable
     private String mail;
     @NotNull
     private Long phoneNumber;
     @Nullable
     private Long whatsappNumber;
+
+
+
+
+
+
 }

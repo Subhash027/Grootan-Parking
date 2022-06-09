@@ -49,6 +49,7 @@ public class UIController
 		CustomerDetails customerDetails = new CustomerDetails();
 		model.addAttribute("customerDetails", customerDetails);
 		getEmptyParkingLots(model);
+		getCustomerDetails(model);
 		return "index";
 
 	}
@@ -80,7 +81,7 @@ public class UIController
 		parkingLotService.getParkingLots().forEach(result::add);
 		result = result.stream().filter(parking -> parking.isEmpty()).collect(Collectors.toList());
 		model.addAttribute("result", result);
-		return "get_slot";
+		return "index";
 	}
 
 	@GetMapping("/getpark")
@@ -101,7 +102,7 @@ public class UIController
 	public String getCustomerDetails(Model model) {
 		CustomerDetails customerDetails = new CustomerDetails();
 		model.addAttribute("customerDetails", customerDetails);
-		return "customer_details";
+		return "index";
 	}
 
 	@PostMapping("/customer/details")

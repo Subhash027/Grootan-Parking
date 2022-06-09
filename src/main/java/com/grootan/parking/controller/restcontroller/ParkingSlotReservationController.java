@@ -1,6 +1,7 @@
 package com.grootan.parking.controller.restcontroller;
 
 
+
 import com.grootan.parking.exception.VehicleNotFoundException;
 import com.grootan.parking.model.entity.CustomerDetails;
 import com.grootan.parking.model.entity.ParkingSlotReservation;
@@ -18,9 +19,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-public class ParkingSlotReservationController
-{
+public class ParkingSlotReservationController {
 	Logger logger= LoggerFactory.getLogger(ParkingSlotReservationController.class);
+
 
 	@Autowired
 	ParkingSlotReservationService parkingSlotReservationService;

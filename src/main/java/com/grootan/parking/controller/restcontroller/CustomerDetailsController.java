@@ -19,7 +19,7 @@ public class CustomerDetailsController
     Logger logger= LoggerFactory.getLogger(CustomerDetailsController.class);
 
     @Autowired
-    CustomerDetailsService customerDetailsService;
+	CustomerDetailsService customerDetailsService;
 
    @PostMapping("parking/userdetails")
    public CustomerDetails saveUserDetails(@RequestBody CustomerDetails customerDetails )

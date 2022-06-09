@@ -1,5 +1,7 @@
 package com.grootan.parking.model.entity;
 
+
+
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import java.util.Collection;
