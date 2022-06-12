@@ -1,14 +1,14 @@
 package com.grootan.parking.service;
 
 
+import com.grootan.parking.exception.ParkingLotNotFoundException;
 import com.grootan.parking.exception.VehicleAlreadyCheckedInException;
+import com.grootan.parking.exception.VehicleAlreadyCheckedOutException;
 import com.grootan.parking.model.entity.CustomerDetails;
 import com.grootan.parking.model.entity.ParkingLot;
 import com.grootan.parking.model.entity.ParkingSlotReservation;
 import com.grootan.parking.repository.ParkingLotRepository;
 import com.grootan.parking.repository.ParkingSlotReservationRepository;
-import com.grootan.parking.exception.ParkingLotNotFoundException;
-import com.grootan.parking.exception.VehicleAlreadyCheckedOutException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

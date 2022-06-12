@@ -1,8 +1,8 @@
 package com.grootan.parking.service.userservice;
 
 import com.grootan.parking.model.Registration;
-import com.grootan.parking.model.entity.User;
 import com.grootan.parking.model.entity.Role;
+import com.grootan.parking.model.entity.User;
 import com.grootan.parking.repository.userrepository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;

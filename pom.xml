@@ -66,29 +66,16 @@
 			<optional>true</optional>
 		</dependency>
 
-
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-ui</artifactId>
 			<version>1.6.6</version>
 		</dependency>
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-
 
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 		</dependency>
-
-        <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>webjars-locator-core</artifactId>
-            <version>0.48</version>
-        </dependency>
 
         <dependency>
             <groupId>javax.validation</groupId>
@@ -99,23 +86,18 @@
 			<artifactId>bootstrap</artifactId>
 			<version>4.0.0-2</version>
 		</dependency>
-		<dependency>
-		<groupId>org.webjars</groupId>
-		<artifactId>webjars-locator</artifactId>
-		<version>0.30</version>
-	</dependency>
 
 		<dependency>
 			<groupId>org.webjars</groupId>
-			<artifactId>bootstrap</artifactId>
-			<version>4.0.0-2</version>
+			<artifactId>webjars-locator-core</artifactId>
+			<version>0.48</version>
 		</dependency>
 
 		<dependency>
-		<groupId>org.webjars</groupId>
-		<artifactId>webjars-locator</artifactId>
-		<version>0.30</version>
-	</dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>webjars-locator</artifactId>
+			<version>0.30</version>
+		</dependency>
     </dependencies>
 
 <!--	<dependencyManagement>-->
