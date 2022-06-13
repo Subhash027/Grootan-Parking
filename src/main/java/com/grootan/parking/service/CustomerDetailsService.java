@@ -16,10 +16,9 @@ import static com.grootan.parking.constants.StringConstants.DELETE_SUCCESSFULL;
 
 
 @Service
-public class CustomerDetailsService {
-
-    Logger logger= LoggerFactory.getLogger(CustomerDetailsService.class);
-
+public class CustomerDetailsService
+{
+    Logger logger = LoggerFactory.getLogger(CustomerDetailsService.class);
 
     @Autowired
 	CustomerRepository customerRepository;
@@ -80,18 +79,4 @@ public class CustomerDetailsService {
         return customerDetails;
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
