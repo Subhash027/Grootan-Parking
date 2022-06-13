@@ -19,14 +19,13 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ParkingSlotReservationService {
+public class ParkingSlotReservationService  {
 	@Autowired
 	ParkingSlotReservationRepository parkingSlotReservationRepository;
 
@@ -57,7 +56,7 @@ public class ParkingSlotReservationService {
 			parkingLot.setEmpty(false);
 			parkingLot.getPrice();
 			parkingLotRepository.save(parkingLot);
-			return parkingSlotReservationRepository.save(new ParkingSlotReservation(parkingLot.getName(), LocalTime.now(),customerDetails.getVehicleNumber(),, (LocalDateTime) null,parkingLot.getPrice()));
+			return parkingSlotReservationRepository.save(new ParkingSlotReservation(parkingLot.getName(),LocalDateTime.now(),timeOnly(),customerDetails.getVehicleNumber(),dateOnly(),  null,parkingLot.getPrice()));
 
 		} else {
 			throw new ParkingLotNotFoundException("Parking Lot not suitable for you");
@@ -87,7 +86,7 @@ public class ParkingSlotReservationService {
 			{
 				LocalDateTime checkIn = parkingSlotReservation.getInTime();
 				LocalDateTime checkOut = parkingSlotReservation.getOutTime();
-				LocalDate date=parkingSlotReservation.getBookingDate();
+				String date=parkingSlotReservation.getBookingDate();
 				if(checkIn!=null&&checkOut==null&&date!=null)
 				{
 					logger.info("Vehicle already check-in ");
@@ -147,7 +146,7 @@ public class ParkingSlotReservationService {
 
 
 	public double calculatePrice(LocalDateTime checkInDate, LocalDateTime checkOutDate, double price) {
-		int priceCheck = (int) ChronoUnit.HOURS.between(checkInDate, checkOutDate);
+		int priceCheck = (int) ChronoUnit.HOURS.between(checkInDate,checkOutDate);
 		logger.debug("Price is calculated for " + priceCheck);
 		double pricevalue=priceCheck * price;
 		if(pricevalue<=0)
@@ -160,10 +159,16 @@ public class ParkingSlotReservationService {
 
 	public String dateOnly()
 	{
-			DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy hh.mm aa");
+		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 			return dateFormat.format(new Date()).toString();
 
 	}
+	 public String timeOnly()
+	 {
+		 DateFormat dateFormat = new SimpleDateFormat("hh.mm aa");
+		 return dateFormat.format(new Date()).toString();
+	 }
+
 
 
 

@@ -18,7 +18,7 @@
         <li class="welcome" >welcome,</li><li id="username" th:text="${user.userName}">user</li></ul></a>
     <div class="header-right">
         <a class="active" href="#home">Home</a>
-        <a   data-toggle="modal" data-target="#TicketModal">Ticket</a>
+        <a  data-toggle="modal" data-target="#TicketModal">Ticket</a>
         <a sec:authorize="isAuthenticated()" th:href="@{/login}">logout</a>
     </div>
 </div>
@@ -48,6 +48,7 @@
     </table>
 </div>
 <th:block th:action="@{/customer/details}" method="get" th:replace="_modals :: modal('exampleModal')">modal</th:block>
+<th:block th:action="@{/customer/details}" method="get" th:replce="Ticket :: modal('TicketModal')">ticket</th:block>
 </div>
 <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
 <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>

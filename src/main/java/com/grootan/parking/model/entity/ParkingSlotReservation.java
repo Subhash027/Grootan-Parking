@@ -4,24 +4,20 @@ package com.grootan.parking.model.entity;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.transaction.Transactional;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.util.Date;
 
 
-@NoArgsConstructor
+
 @AllArgsConstructor
 @ToString
 @Transactional
 @Entity
+@NoArgsConstructor
 public class ParkingSlotReservation
 {
     @Id
@@ -30,26 +26,19 @@ public class ParkingSlotReservation
 
     private String parkingLot;
 
-    private Date inTime;
+    private LocalDateTime inTime;
+
+    private String entryTime;
 
     private String vehicleNumber;
 
-    private LocalDate bookingDate;
+    private String bookingDate;
 
     private LocalDateTime outTime;
 
     private Double price;
 
-	public ParkingSlotReservation(String name, LocalTime now, String vehicleNumber, LocalDate now1, LocalDateTime outTime, Double price) {
-        this.parkingLot = parkingLot;
-        this.inTime = inTime;
-        this.vehicleNumber = vehicleNumber;
-        this.bookingDate = bookingDate;
-        this.outTime = outTime;
-        this.price=price;
-	}
-
-	public Integer getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -69,7 +58,7 @@ public class ParkingSlotReservation
         return inTime;
     }
 
-    public void setInTime(LocalDateTime inTime) {
+    public void setInTime() {
         this.inTime = inTime;
     }
 
@@ -81,11 +70,11 @@ public class ParkingSlotReservation
         this.vehicleNumber = vehicleNumber;
     }
 
-    public LocalDate getBookingDate() {
+    public String getBookingDate() {
         return bookingDate;
     }
 
-    public void setBookingDate(LocalDate bookingDate) {
+    public void setBookingDate(String bookingDate) {
         this.bookingDate = bookingDate;
     }
 
@@ -104,13 +93,27 @@ public class ParkingSlotReservation
     public void setPrice(Double price) {
         this.price = price;
     }
-
-    public ParkingSlotReservation(String parkingLot, LocalDateTime inTime, String vehicleNumber, LocalDate bookingDate, LocalDateTime outTime, Double price) {
-        this.parkingLot = parkingLot;
+    public void setInTime(LocalDateTime inTime) {
         this.inTime = inTime;
+    }
+
+    public String getEntryTime() {
+        return entryTime;
+    }
+
+    public void setEntryTime(String entryTime) {
+        this.entryTime = entryTime;
+    }
+
+    public ParkingSlotReservation(String parkingLot,LocalDateTime inTime, String  entryTime, String vehicleNumber, String bookingDate, LocalDateTime outTime,Double price) {
+        this.parkingLot = parkingLot;
+        this.inTime=inTime;
+        this.entryTime = entryTime;
         this.vehicleNumber = vehicleNumber;
         this.bookingDate = bookingDate;
         this.outTime = outTime;
         this.price=price;
     }
+
+
 }

@@ -79,7 +79,7 @@ public class UIController
 	{
 		List<ParkingLot> result = new ArrayList<>();
 		parkingLotService.getParkingLots().forEach(result::add);
-		result = result.stream().filter(parking -> parking.isEmpty()).collect(Collectors.toList());
+		result = result.stream().filter(ParkingLot::isEmpty).collect(Collectors.toList());
 		model.addAttribute("result", result);
 		return "index";
 	}
@@ -109,6 +109,10 @@ public class UIController
 	public String lotCreated(@ModelAttribute("customerDetails") CustomerDetails customerDetails, Model model) {
 		ParkingSlotReservation parkingSlotReservation = parkingSlotReservationService.createParking(customerDetails);
 		model.addAttribute("parkingSlotReservation", parkingSlotReservation);
+		Authentication authentication= userService.getCurrentUser();
+		model.addAttribute("username",authentication.getName());
+		User user=userRepository.findByEmail(authentication.getName());
+		model.addAttribute("user",user);
 		return "Ticket";
 	}
 
@@ -117,6 +121,12 @@ public class UIController
 	{
 		ParkingLot parkingLot=new ParkingLot();
 		model.addAttribute("parkingLot", parkingLot);
+		ParkingSlotReservation parkingSlotReservation=new ParkingSlotReservation();
+		model.addAttribute("parkingSlotReservation", parkingSlotReservation);
+		Authentication authentication= userService.getCurrentUser();
+		model.addAttribute("username",authentication.getName());
+		User user=userRepository.findByEmail(authentication.getName());
+		model.addAttribute("user",user);
 		return "Ticket";
 	}
 
